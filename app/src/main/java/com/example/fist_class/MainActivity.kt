@@ -41,6 +41,16 @@ class MainActivity : AppCompatActivity() {
         texto.text = database[position]
     }
 
+    fun search(view: View) {
+        position = userin.text.toString().toInt()
+        if (0 <= position && position <= database.size) position
+        else{
+            Toast.makeText(this, "Error numero incorrecto >:( ", Toast.LENGTH_LONG).show()
+            position = 0
+        }
+        texto.text = database[position]
+    }
+
     fun next(view:View){
         texto.text = getRandomMessage()
     }
